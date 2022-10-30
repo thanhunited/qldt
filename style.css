@@ -1,0 +1,318 @@
+.warrper {
+  width: 1006px;
+  margin: auto;
+  padding: 120px 0;
+  background: #ffffff;
+  height: 700px;
+}
+
+.schedule--warrper {
+  border: solid 1px #dcdbdb;
+  float: left;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.schedule--title__base {
+  background: url(img/menuLogRight.png);
+  height: 28px;
+  color: #000000;
+  font-size: 9pt;
+  font-weight: bold;
+  line-height: 28px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.title--img {
+  width: 10px;
+  vertical-align: inherit;
+  margin: 0 8px 0 6px;
+  display: flex;
+  align-items: center;
+}
+
+.title--p {
+  font-size: 10px;
+  font-family: Tahoma;
+}
+
+.schedule--select {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: solid 1px #dcdbdb;
+  float: left;
+  width: 100%;
+  color: #000000;
+  margin: 0;
+  text-align: center;
+  padding: 4px 0;
+  font-family: Tahoma;
+}
+
+.select--img {
+  width: 80px;
+  padding: 0px 10px;
+}
+
+.select--title {
+  font-family: Tahoma;
+}
+
+.select--semester {
+  display: flex;
+  padding-bottom: 2px;
+}
+
+.select--semester span {
+  font-size: 13px;
+  padding-right: 6px;
+}
+
+.select--p {
+  display: flex;
+  font-style: italic;
+  font-size: 11px;
+  padding-top: 2px;
+}
+
+/* schedule  */
+.schedule {
+  font-family: Arial;
+  font-size: 11px;
+  font-weight: bold;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.header--schedule {
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  width: 99%;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  text-align: left;
+}
+
+.space {
+  height: 18px;
+  width: 50px;
+  border-color: #999999;
+  border-width: 1px;
+  border-style: Solid;
+  border-collapse: collapse;
+}
+
+.space-left {
+  border-right: none;
+  border-bottom: none;
+}
+
+.space-left-end {
+  border-right: none;
+  border-top: none;
+}
+
+.space-right {
+  border-left: none;
+  border-bottom: none;
+  position: relative;
+  left: 1px;
+}
+
+.space-right-end {
+  border-left: none;
+  border-top: none;
+  position: relative;
+  left: 1px;
+}
+
+.day {
+  width: 123px;
+  height: 18px;
+}
+
+.span {
+  color: White;
+  background-color: #6699cc;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 11px;
+  width: 123px;
+  height: 18px;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* body  */
+.body--schedule {
+  width: 100%;
+}
+
+.lesson {
+  width: 100%;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p {
+  color: White;
+  background-color: #6699cc;
+  border-color: Gray;
+  border-width: 1px;
+  border-style: solid;
+  height: 24px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: none;
+}
+
+.p-right {
+  border-left: none;
+}
+
+.period {
+  width: 122px;
+  height: 24px;
+  border-color: Gray;
+  border-width: 1px;
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+}
+
+/* period--active */
+.period--active {
+  background-color: Beige;
+  border-color: Gray;
+  border-width: 1px;
+  border-style: solid;
+  height: 48px;
+  width: 121px;
+  position: relative;
+  top: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.active--practice {
+  height: 96px;
+  top: 38px;
+}
+
+.period--title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.period--name {
+  color: Teal;
+  text-align: left;
+  width: 90px;
+  cursor: pointer;
+  margin-bottom: 1px;
+}
+
+.period--class {
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12px;
+}
+
+.period--class p {
+  font-style: italic;
+  color: gray;
+  margin: 0 4px 0 0;
+}
+
+.class {
+  text-align: left;
+  width: 90px;
+  color: Teal;
+  cursor: pointer;
+}
+
+.lesson1,
+.lesson2,
+.lesson3,
+.lesson4,
+.lesson5,
+.lesson6,
+.lesson7,
+.lesson8,
+.lesson9,
+.lesson10,
+.lesson11,
+.lesson12 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+}
+
+/* footer  */
+.schedule--footer {
+  width: 100%;
+  text-align: left;
+}
+
+.footer__title-button {
+  flex: 2;
+  font-size: 6px;
+  padding: 6px 2px;
+}
+
+.footer__title-button input {
+  font-size: 11px;
+  padding: 3px 6px;
+  cursor: pointer;
+}
+
+.schedule--footer__title {
+  display: flex;
+}
+
+.footer__title-node {
+  padding: 6px 0 10px 0;
+  flex: 1;
+}
+
+.title1 {
+  display: flex;
+  padding: 4px 8px;
+}
+
+.title1 span {
+  font-size: 11px;
+  padding: 0 4px;
+  font-family: Tahoma;
+}
+
+.schedule--footer__p {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  color: Blue;
+  font-weight: bold;
+  font-style: italic;
+  text-align: right;
+}

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Thời khóa biểu</title>
+  </head>
+  <body>
+    <div class="warrper">
+      <div class="schedule--warrper">
+        <div class="schedule--title__base">
+          <div class="title--img">
+            <img src="./img/icon_04b.gif" alt="" />
+          </div>
+          <div class="title--p">
+            <span>Thông Tin Thời Khóa Biểu</span>
+          </div>
+        </div>
+
+        <div class="schedule--select">
+          <div class="select--img">
+            <img src="./img/icon_lich.png" alt="" />
+          </div>
+
+          <div class="select--title">
+            <div class="select--semester">
+              <span>Chọn học kỳ xem TKB</span>
+              <select name="select--semester" id="select--semester__title">
+                <option selected value="20212">
+                  Học kỳ 1 - Năm học 2022-2023
+                </option>
+                <option value="20222">Học kỳ 2 - Năm học 2022-2023</option>
+              </select>
+            </div>
+
+            <div class="select--week">
+              <select name="select--week" id="select--week__title">
+                <option selected value="0">TKB theo tuần</option>
+                <option value="1">TKB Toàn Trường</option>
+                <option value="2">TKB học kỳ cá nhân</option>
+              </select>
+
+              <select
+                onchange="handleSchedule()"
+                id="scheduleWeeks"
+                style="width: 300px"
+              >
+                <option value="Tuần 01 [Từ 15/08/2022 -- Đến 21/08/2022]">
+                  Tuần 01 [Từ 15/08/2022 -- Đến 21/08/2022]
+                </option>
+                <option value="Tuần 02 [Từ 22/08/2022 -- Đến 28/08/2022]">
+                  Tuần 02 [Từ 22/08/2022 -- Đến 28/08/2022]
+                </option>
+                <option value="Tuần 03 [Từ 29/08/2022 -- Đến 04/09/2022]">
+                  Tuần 03 [Từ 29/08/2022 -- Đến 04/09/2022]
+                </option>
+                <option value="Tuần 04 [Từ 05/09/2022 -- Đến 11/09/2022]">
+                  Tuần 04 [Từ 05/09/2022 -- Đến 11/09/2022]
+                </option>
+                <option value="Tuần 05 [Từ 12/09/2022 -- Đến 18/09/2022]">
+                  Tuần 05 [Từ 12/09/2022 -- Đến 18/09/2022]
+                </option>
+                <option value="Tuần 06 [Từ 19/09/2022 -- Đến 25/09/2022]">
+                  Tuần 06 [Từ 19/09/2022 -- Đến 25/09/2022]
+                </option>
+                <option value="Tuần 07 [Từ 26/09/2022 -- Đến 02/10/2022]">
+                  Tuần 07 [Từ 26/09/2022 -- Đến 02/10/2022]
+                </option>
+                <option value="Tuần 08 [Từ 03/10/2022 -- Đến 09/10/2022]">
+                  Tuần 08 [Từ 03/10/2022 -- Đến 09/10/2022]
+                </option>
+                <option value="Tuần 09 [Từ 10/10/2022 -- Đến 16/10/2022]">
+                  Tuần 09 [Từ 10/10/2022 -- Đến 16/10/2022]
+                </option>
+                <option value="Tuần 10 [Từ 17/10/2022 -- Đến 23/10/2022]">
+                  Tuần 10 [Từ 17/10/2022 -- Đến 23/10/2022]
+                </option>
+                <option value="Tuần 11 [Từ 24/10/2022 -- Đến 30/10/2022]">
+                  Tuần 11 [Từ 24/10/2022 -- Đến 30/10/2022]
+                </option>
+                <option value="Tuần 12 [Từ 31/10/2022 -- Đến 06/11/2022]">
+                  Tuần 12 [Từ 31/10/2022 -- Đến 06/11/2022]
+                </option>
+                <option value="Tuần 13 [Từ 07/11/2022 -- Đến 13/11/2022]">
+                  Tuần 13 [Từ 07/11/2022 -- Đến 13/11/2022]
+                </option>
+                <option value="Tuần 14 [Từ 14/11/2022 -- Đến 20/11/2022]">
+                  Tuần 14 [Từ 14/11/2022 -- Đến 20/11/2022]
+                </option>
+                <option value="Tuần 15 [Từ 21/11/2022 -- Đến 27/11/2022]">
+                  Tuần 15 [Từ 21/11/2022 -- Đến 27/11/2022]
+                </option>
+                <option value="Tuần 16 [Từ 28/11/2022 -- Đến 04/12/2022]">
+                  Tuần 16 [Từ 28/11/2022 -- Đến 04/12/2022]
+                </option>
+                <option value="Tuần 17 [Từ 05/12/2022 -- Đến 11/12/2022]">
+                  Tuần 17 [Từ 05/12/2022 -- Đến 11/12/2022]
+                </option>
+                <option value="Tuần 18 [Từ 12/12/2022 -- Đến 18/12/2022]">
+                  Tuần 18 [Từ 12/12/2022 -- Đến 18/12/2022]
+                </option>
+                <option value="Tuần 19 [Từ 19/12/2022 -- Đến 25/12/2022]">
+                  Tuần 19 [Từ 19/12/2022 -- Đến 25/12/2022]
+                </option>
+                <option value="Tuần 20 [Từ 26/12/2022 -- Đến 01/01/2023]">
+                  Tuần 20 [Từ 26/12/2022 -- Đến 01/01/2023]
+                </option>
+                <option value="Tuần 21 [Từ 02/01/2023 -- Đến 08/01/2023]">
+                  Tuần 21 [Từ 02/01/2023 -- Đến 08/01/2023]
+                </option>
+                <option value="Tuần 22 [Từ 09/01/2023 -- Đến 15/01/2023]">
+                  Tuần 22 [Từ 09/01/2023 -- Đến 15/01/2023]
+                </option>
+                <option value="Tuần 23 [Từ 16/01/2023 -- Đến 22/01/2023]">
+                  Tuần 23 [Từ 16/01/2023 -- Đến 22/01/2023]
+                </option>
+                <option value="Tuần 24 [Từ 23/01/2023 -- Đến 29/01/2023]">
+                  Tuần 24 [Từ 23/01/2023 -- Đến 29/01/2023]
+                </option>
+                <option value="Tuần 25 [Từ 30/01/2023 -- Đến 05/02/2023]">
+                  Tuần 25 [Từ 30/01/2023 -- Đến 05/02/2023]
+                </option>
+                <option value="Tuần 26 [Từ 06/02/2023 -- Đến 12/02/2023]">
+                  Tuần 26 [Từ 06/02/2023 -- Đến 12/02/2023]
+                </option>
+                <option value="Tuần 27 [Từ 13/02/2023 -- Đến 19/02/2023]">
+                  Tuần 27 [Từ 13/02/2023 -- Đến 19/02/2023]
+                </option>
+              </select>
+
+              <input
+                type="button"
+                id="InTKB"
+                onclick=""
+                value="In TKB"
+                style="font-size: 11px; height: 20px; cursor: pointer"
+              />
+            </div>
+
+            <span class="select--p">
+              ( Lưu ý: tuần 1 tương ứng với tuần 1 của học kỳ, bắt đầu từ ngày
+              15/08/2022) ...
+            </span>
+          </div>
+        </div>
+
+        <div class="schedule">
+          <div class="header--schedule">
+            <div class="space space-left"></div>
+
+            <div class="day">
+              <div class="span">THỨ HAI</div>
+            </div>
+
+            <div class="day">
+              <div class="span">THỨ BA</div>
+            </div>
+
+            <div class="day">
+              <div class="span">THỨ TƯ</div>
+            </div>
+
+            <div class="day">
+              <div class="span">THỨ NĂM</div>
+            </div>
+
+            <div class="day">
+              <div class="span">THỨ SÁU</div>
+            </div>
+
+            <div class="day">
+              <div class="span">THỨ BẢY</div>
+            </div>
+
+            <div class="day">
+              <div class="span">CHỦ NHẬT</div>
+            </div>
+
+            <div class="space space-right"></div>
+          </div>
+
+          <div class="body--schedule">
+            <div class="lesson">
+              <div class="p">Tiết 1</div>
+              <div class="lesson1"></div>
+              <div class="p p-right">Tiết 1</div>
+            </div>
+
+            <div class="lesson">
+              <div class="p">Tiết 2</div>
+              <div class="lesson2"></div>
+              <div class="p p-right">Tiết 2</div>
+            </div>
+
+            <div class="lesson">
+              <div class="p">Tiết 3</div>
+              <div class="lesson3"></div>
+              <div class="p p-right">Tiết 3</div>
+            </div>
+
+            <div class="lesson">
+              <div class="p">Tiết 4</div>
+              <div class="lesson4"></div>
+              <div class="p p-right">Tiết 4</div>
+            </div>
+
+            <div class="lesson">
+              <div class="p">Tiết 5</div>
+              <div class="lesson5"></div>
+              <div class="p p-right">Tiết 5</div>
+            </div>
+
+            <div class="lesson">
+              <div class="p">Tiết 6</div>
+              <div class="lesson6"></div>
+              <div class="p p-right">Tiết 6</div>
+            </div>
+
+            <div class="lesson">
+              <div class="p">Tiết 7</div>
+              <div class="lesson7"></div>
+              <div class="p p-right">Tiết 7</div>
+            </div>
+
+            <div class="lesson">
+              <div class="p">Tiết 8</div>
+              <div class="lesson8"></div>
+              <div class="p p-right">Tiết 8</div>
+            </div>
+
+            <div class="lesson">
+              <div class="p">Tiết 9</div>
+              <div class="lesson9"></div>
+              <div class="p p-right">Tiết 9</div>
+            </div>
+
+            <div class="lesson">
+              <div class="p">Tiết 10</div>
+              <div class="lesson10"></div>
+              <div class="p p-right">Tiết 10</div>
+            </div>
+
+            <div class="lesson">
+              <div class="p">Tiết 11</div>
+              <div class="lesson11"></div>
+              <div class="p p-right">Tiết 11</div>
+            </div>
+
+            <div class="lesson">
+              <div class="p">Tiết 12</div>
+              <div class="lesson12"></div>
+              <div class="p p-right">Tiết 12</div>
+            </div>
+          </div>
+
+          <div class="header--schedule">
+            <div class="space space-left-end"></div>
+
+            <div class="day">
+              <div class="span">THỨ HAI</div>
+            </div>
+
+            <div class="day">
+              <div class="span">THỨ BA</div>
+            </div>
+
+            <div class="day">
+              <div class="span">THỨ TƯ</div>
+            </div>
+
+            <div class="day">
+              <div class="span">THỨ NĂM</div>
+            </div>
+
+            <div class="day">
+              <div class="span">THỨ SÁU</div>
+            </div>
+
+            <div class="day">
+              <div class="span">THỨ BẢY</div>
+            </div>
+
+            <div class="day">
+              <div class="span">CHỦ NHẬT</div>
+            </div>
+
+            <div class="space space-right-end"></div>
+          </div>
+        </div>
+
+        <div class="schedule--footer">
+          <div class="schedule--footer__title">
+            <div class="footer__title-node">
+              <div class="title1">
+                <div
+                  style="
+                    width: 15px;
+                    height: 15px;
+                    background-color: YellowGreen;
+                  "
+                ></div>
+                <span class="">Môn học chỉ trùng một vài tiết</span>
+              </div>
+
+              <div class="title1">
+                <div
+                  style="width: 15px; height: 15px; background-color: #ccccff"
+                ></div>
+                <span
+                  id="ctl00_ContentPlaceHolder1_ctl00_lbltrungtatca"
+                  class="Label"
+                >
+                  Môn học trùng tất cả các tiết
+                </span>
+              </div>
+
+              <div class="title1">
+                <div
+                  style="width: 15px; height: 15px; background-color: Yellow"
+                ></div>
+                <span class="">Thời khóa biểu học kỳ cũ</span>
+              </div>
+
+              <div class="title1">
+                <div
+                  style="width: 15px; height: 15px; background-color: lightpink"
+                ></div>
+                <span class="">Giảng viên đã đăng ký nghỉ dạy</span>
+              </div>
+            </div>
+
+            <div class="footer__title-button">
+              <div style="text-align: left">
+                <input
+                  type="submit"
+                  name="ctl00$ContentPlaceHolder1$ctl00$btnDt"
+                  value="Tuần Đầu"
+                />
+                <input
+                  type="submit"
+                  name="ctl00$ContentPlaceHolder1$ctl00$btnTrangTruoc"
+                  value="Tuần Trước"
+                />
+                <input
+                  type="submit"
+                  name="ctl00$ContentPlaceHolder1$ctl00$btnTuanToi"
+                  value="Tuần Kế"
+                />
+                <input
+                  type="submit"
+                  name="ctl00$ContentPlaceHolder1$ctl00$btnTuanCuoi"
+                  value="Tuần Cuối"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="schedule--footer__p">
+            <span id="ctl00_ContentPlaceHolder1_ctl00_lblNoteUpdate"
+              >( Dữ liệu được cập nhật vào lúc: 9:36 Ngày: 27/10/2022)</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
